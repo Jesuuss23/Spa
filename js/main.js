@@ -8,27 +8,20 @@
 
   /* ── 1. HEADER y HAMBURGER ──────────────────────────────────── */
   const header     = document.querySelector('.main-header');
-  const hamburger  = document.querySelector('.hamburger');
   const navMenu    = document.querySelector('.nav-menu');
   const navLinks   = document.querySelectorAll('.nav-menu a');
+  const hamburgerBtn = document.querySelector('.hamburger');
   
 
-  if (!hamburger && header) {
-    const btn = document.createElement('button');
-    btn.className = 'hamburger';
-    btn.setAttribute('aria-label', 'Menú');
-    btn.innerHTML = '<span></span><span></span><span></span>';
-    header.querySelector('.header-right').appendChild(btn);
-    
-
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('active');
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', function() {
+      this.classList.toggle('active');
       navMenu.classList.toggle('open');
     });
 
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        btn.classList.remove('active');
+        hamburgerBtn.classList.remove('active');
         navMenu.classList.remove('open');
       });
     });
