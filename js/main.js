@@ -11,13 +11,15 @@
   const hamburger  = document.querySelector('.hamburger');
   const navMenu    = document.querySelector('.nav-menu');
   const navLinks   = document.querySelectorAll('.nav-menu a');
+  
 
   if (!hamburger && header) {
     const btn = document.createElement('button');
     btn.className = 'hamburger';
     btn.setAttribute('aria-label', 'Menú');
     btn.innerHTML = '<span></span><span></span><span></span>';
-    header.querySelector('.header-container').appendChild(btn);
+    header.querySelector('.header-right').appendChild(btn);
+    
 
     btn.addEventListener('click', () => {
       btn.classList.toggle('active');
